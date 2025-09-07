@@ -12,11 +12,33 @@ contract SimpleStorage {
     //this gets initialized to zero
     uint256 public favNum;
 
+    //this fucntion will cost gas as it is changing state of blockchain
     function store(uint256 _FavNum) public {
         favNum = _FavNum;
     }
 
+    // view and Pure function wont cost any gas to execute
+    //we cant read and write any thing from blochain with these functions
     function seeFavNum() public view returns (uint256) {
         return favNum;
     }
+
+    //if we want to use something again and again just for eg: calculation then we use pure function
+
+    function add(uint256) public pure returns (uint256) {
+        return (2 + 5 * 20);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
 }
